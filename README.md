@@ -1,4 +1,4 @@
-# How to use
+# Docker .INI file parser
 
 ## Add an option
 ```
