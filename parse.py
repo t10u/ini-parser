@@ -3,7 +3,7 @@ import configparser
 
 
 def main():
-    config = configparser.ConfigParser()
+    config = configparser.ConfigParser(strict=False)
 
     try:
         section = sys.argv[1]
