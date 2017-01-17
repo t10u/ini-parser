@@ -16,16 +16,15 @@ def main():
     try:
         config.read_string(''.join(sys.stdin))
 
-        """
-        Try to update or remove a config option from a section, or add the option to a new section.
-
-        """
+        """Try to update or remove a config option from a section, or add the option to a new section."""
         if section in config:
             if config_key in config[section]:
                 if config_value == 'delete':
                     config.remove_option(section, config_key)
                 else:
                     config[section][config_key] = config_value
+            else:
+                config.set(section, config_key, config_value)
         else:
             config.add_section(section)
             config.set(section, config_key, config_value)
